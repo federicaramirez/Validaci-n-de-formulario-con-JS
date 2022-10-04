@@ -7,6 +7,7 @@
     <title>Hello Rigo with Vanilla.js</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
     <link rel="shortcut icon" href="./4geeks.ico" />
+    <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,138 +16,138 @@
             Payment form example
         </div>
         <div class="card-body">
-            <!-- alerta -->
-            <div class="alert alert-danger" role="alert">
-                Some fields are missing
-            </div>
-            <!-- fin de alerta -->
-
-            <!-- Fila 1 -->
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-5">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Card</span>
-                            <input type="number" class="form-control" placeholder="XXXXXXX" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">CVC#</span>
-                            <input type="number" class="form-control" placeholder="00000" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="input-group mb-3">
-                            <div class="form-text">$</div>
-                            <span class="input-group-text" id="basic-addon1">Amount</span>
-                            <input type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
+            <form onsubmit="envioDeFormulario(event)">
+                <!-- alerta -->
+                <div class="alert alert-danger" role="alert" id="alertatodo" style="display: none;">
+                    Campo vacio
                 </div>
-            </div>
-            <!-- Fin de fila 1 -->
+                <!-- fin de alerta -->
 
-
-            <!-- Fila 2 -->
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-7">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">First Name</span>
-                            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                    <div class="col-5">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Last Name</span>
-                            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fin fila 2 -->
-
-            <!-- Fila 3 -->
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">City</span>
-                            <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                    <!-- State -->
-                    <div class="form-group col-3">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Pick a state</option>
-                            <option value="1">Salto</option>
-                            <option value="2">Durazno</option>
-                            <option value="3">Treinta y tres</option>
-                        </select>
-                    </div>
-                    <div class="col-3">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Postal Code</span>
-                            <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fin de fila 3 -->
-
-            <!-- Fila 4 -->
-            <!-- Tarjetas -->
-            <div class="d-flex">
-                <div class="col-md-6">
-                    <label class="form-label "><b>We accept:</b></label>
-                    <div class="d-md-flex d-flex justify-content-center">
-                        <div class="bg-secondary rounded-2">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                <label class="form-check-label">
-                                    <i class="fa-brands fa-cc-mastercard"></i>
-                                </label>
+                <!-- Fila 1 -->
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputcard">Card</span>
+                                <input type="number" class="form-control" placeholder="XXXXXXX" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label">
-                                    <i class="fa-brands fa-cc-visa"></i>
-                                </label>
+                        </div>
+                        <div class="col-4">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">CVC#</span>
+                                <input type="number" class="form-control" placeholder="00000" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                <label class="form-check-label">
-                                    <i class="fa-brands fa-cc-diners-club"></i>
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-                                <label class="form-check-label">
-                                    <i class="fa-brands fa-cc-paypal"></i>
-                                </label>
+                        </div>
+                        <div class="col-3">
+                            <div class="input-group mb-3">
+                                <div class="form-text">$</div>
+                                <span class="input-group-text" id="inputamount">Amount</span>
+                                <input type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Message -->
-                <div class="d-flex justify-content-center">
-                    <label class="form-label"><b>Message</b></label>
+                <!-- Fin de fila 1 -->
+
+
+                <!-- Fila 2 -->
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputfirstname">First Name</span>
+                                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputlastname">Last Name</span>
+                                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin fila 2 -->
+
+                <!-- Fila 3 -->
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="cityinput">City</span>
+                                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <!-- State -->
+                        <div class="form-group col-3">
+                            <select class="form-select" aria-label="Default select example" id="selectinput">
+                                <option selected>Pick a state</option>
+                                <option value="1">Tacuarembó</option>
+                                <option value="2">Cerro Largo</option>
+                                <option value="3">Treinta y tres</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputpostalcode">Postal Code</span>
+                                <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin de fila 3 -->
+
+                <!-- Fila 4 -->
+                <!-- Tarjetas -->
+                <div class="d-flex">
                     <div class="col-md-6">
-                        <textarea class="form-control" rows="3" placeholder="Add any notes here"></textarea>
+                        <label class="form-label "><b>We accept:</b></label>
+                        <div class="d-md-flex d-flex justify-content-center" id="tarjetas">
+                            <div class="bg-secondary rounded-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label">
+                                        <i class="fa-brands fa-cc-mastercard"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label">
+                                        <i class="fa-brands fa-cc-visa"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <label class="form-check-label">
+                                        <i class="fa-brands fa-cc-diners-club"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                    <label class="form-check-label">
+                                        <i class="fa-brands fa-cc-paypal"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- <div class="form-text">Add any notes here.</div> -->
+                    <!-- Message -->
+                    <div class="d-flex justify-content-center">
+                        <label class="form-label" id="cuadrotexto"><b>Message</b></label>
+                        <div class="col-md-6">
+                            <textarea class="form-control" rows="3" placeholder="Add any notes here"></textarea>
+                        </div>
+                        <!-- <div class="form-text">Add any notes here.</div> -->
+                    </div>
                 </div>
-            </div>
-            <div class="card-footer text-muted">
-                <div class="d-md-flex justify-content-md-end">
-                    <a href="#" class="btn btn-primary me-md-2">Cancel</a>
-                    <a href="#" class="btn btn-primary">Send</a>
-                </div>
+                <div class="card-footer text-muted">
+                    <div class="d-md-flex justify-content-md-end">
+                        <a href="#" class="btn btn-primary me-md-2">Cancel</a>
+                        <a href="#" class="btn btn-primary" id="btnenviar">Send</a>
+                    </div>
 
-            </div>
+                </div>
             </form>
-
         </div>
 
 
